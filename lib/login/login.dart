@@ -16,7 +16,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(30,0,30,0),
+          padding: const EdgeInsets.fromLTRB(50,0,50,0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -29,7 +29,7 @@ class _LoginState extends State<Login> {
                   'assets/icon/icon_kakao_login.svg',
                   width: 20,
                 ),
-                label: const Text('카카오 로그인'),
+                label: Text('카카오 로그인', style: FontDefines.kakaoLoginBtnBlack),
                 style: ButtonDefines.kakaoLoginElBtn,
               ),
             ],

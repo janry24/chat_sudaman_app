@@ -18,4 +18,5 @@ class ColorDefines {
   static const Color iconPointColor = Color(0xffbbbb97);
   // =================================================
   static const Color kakaoLoginBtnColor = Color(0xffFEE500);
+  static const Color buttonTextBlack = Color(0xff000000);
 }

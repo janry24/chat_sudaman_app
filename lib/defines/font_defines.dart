@@ -68,4 +68,10 @@ class FontDefines {
 		fontSize: 14,
 		fontFamily: 'NotoSansKR',
 	);
+  // =======================================
+  static TextStyle kakaoLoginBtnBlack = const TextStyle(
+		color: ColorDefines.buttonTextBlack,
+		fontSize: 14,
+		fontFamily: 'NotoSansKR',
+	);
 }
