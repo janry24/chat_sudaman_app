@@ -1,4 +1,5 @@
 import 'package:chat_sudaman_app/defines/color_defines.dart';
+import 'package:chat_sudaman_app/home/home.dart';
 import 'package:chat_sudaman_app/login/login.dart';
 import 'package:flutter/material.dart';
 
@@ -19,11 +20,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         dialogBackgroundColor: ColorDefines.bgWhite
       ),
-      initialRoute: '/login',
+      initialRoute: '/home',
       routes: {
-        // '/': (context) => const Home(),
+        '/': (context) => const Home(),
         '/login': (context) => const Login(),
-        // '/home': (context) => const Home()
+        '/home': (context) => const Home()
       },
     );
   }
