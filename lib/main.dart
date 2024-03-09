@@ -1,6 +1,6 @@
 import 'package:chat_sudaman_app/defines/color_defines.dart';
 import 'package:chat_sudaman_app/home/home.dart';
-import 'package:chat_sudaman_app/login/login.dart';
+import 'package:chat_sudaman_app/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
