@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:chat_sudaman_app/koGPT/ko_gpt_service.dart';
 
-class ChatGPTPage extends StatefulWidget {
-  const ChatGPTPage({Key? key}) : super(key: key);
+// KoGPTService 인스턴스 생성 및 의존성 주입
+final koGPTService = KoGPTService();
+
+class KoGPTPage extends StatefulWidget {
+  const KoGPTPage({Key? key}) : super(key: key);
 
   @override
-  // _ChatGPTPageState createState() => _ChatGPTPageState();
-  State<ChatGPTPage> createState() => _ChatGPTPageState();
+  State<KoGPTPage> createState() => _KoGPTPageState();
 }
 
-class _ChatGPTPageState extends State<ChatGPTPage> {
+class _KoGPTPageState extends State<KoGPTPage> {
   final TextEditingController _textController = TextEditingController();
   final List<String> _messages = [];
 
@@ -54,10 +57,24 @@ class _ChatGPTPageState extends State<ChatGPTPage> {
     );
   }
 
-  void _sendMessage(String message) {
+  void _sendMessage(String message) async {
+  setState(() {
+    _messages.insert(0, message);
+    _textController.clear();
+  });
+
+  // KoGPTService의 search 메서드 호출
+  final response = await koGPTService.search(message);
+
+  // 응답이 있는지 및 generatedText가 null이 아닌지 확인하고 처리
+  if (response['generations'] != null && response['generations'][0]['text'] != null) {
+    final String generatedText = response['generations'][0]['text'];
     setState(() {
-      _messages.insert(0, message);
-      _textController.clear();
+      _messages.insert(0, generatedText);
     });
+  } else {
+    print('Generated text is null');
   }
+}
+
 }

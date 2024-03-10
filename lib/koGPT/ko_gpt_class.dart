@@ -1,8 +1,8 @@
-class ChatGPT {
+class KoGPT {
   String id;
   String generations;
 
-  ChatGPT({
+  KoGPT({
     required this.id,
     required this.generations,
   });

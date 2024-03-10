@@ -1,4 +1,4 @@
-import 'package:chat_sudaman_app/chatGPT/chat_gpt_page.dart';
+import 'package:chat_sudaman_app/koGPT/ko_gpt_page.dart';
 import 'package:chat_sudaman_app/defines/color_defines.dart';
 import 'package:chat_sudaman_app/defines/font_defines.dart';
 import 'package:chat_sudaman_app/home/home_page.dart';
@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const ChatGPTPage(),
+    const KoGPTPage(),
     const ImageGPTPage(),
     const SearchPage(),
   ];
