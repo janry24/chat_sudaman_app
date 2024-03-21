@@ -58,23 +58,23 @@ class _KoGPTPageState extends State<KoGPTPage> {
   }
 
   void _sendMessage(String message) async {
-  setState(() {
-    _messages.insert(0, message);
-    _textController.clear();
-  });
-
-  // KoGPTService의 search 메서드 호출
-  final response = await koGPTService.search(message);
-
-  // 응답이 있는지 및 generatedText가 null이 아닌지 확인하고 처리
-  if (response['generations'] != null && response['generations'][0]['text'] != null) {
-    final String generatedText = response['generations'][0]['text'];
     setState(() {
-      _messages.insert(0, generatedText);
+      _messages.insert(0, message);
+      _textController.clear();
     });
-  } else {
-    print('Generated text is null');
+
+    // KoGPTService의 search 메서드 호출
+    final response = await koGPTService.search(message);
+
+    // 응답이 있는지 및 generatedText가 null이 아닌지 확인하고 처리
+    if (response['generations'] != null && response['generations'][0]['text'] != null) {
+      final String generatedText = response['generations'][0]['text'];
+      setState(() {
+        _messages.insert(0, generatedText);
+      });
+    } else {
+      print('Generated text is null');
+    }
   }
-}
 
 }

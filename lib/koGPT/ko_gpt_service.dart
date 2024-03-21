@@ -1,7 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-
-import 'ko_gpt_class.dart';
 
 class KoGPTService {
   Future<Map<String, dynamic>> search(String prompt) async {
@@ -12,6 +9,8 @@ class KoGPTService {
       final Map<String, dynamic> requestData = {
         'prompt': prompt,
         'max_tokens': 150,
+        'temperature': 1.0,
+        'top_p': 1.0
       };
 
       // Dio 인스턴스 생성
