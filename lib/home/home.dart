@@ -2,7 +2,7 @@ import 'package:chat_sudaman_app/koGPT/ko_gpt_page.dart';
 import 'package:chat_sudaman_app/defines/color_defines.dart';
 import 'package:chat_sudaman_app/defines/font_defines.dart';
 import 'package:chat_sudaman_app/home/home_page.dart';
-import 'package:chat_sudaman_app/imageGPT/image_gpt_page.dart';
+import 'package:chat_sudaman_app/karlo/karlo_page.dart';
 import 'package:chat_sudaman_app/search/search_page.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _pages = [
     const HomePage(),
     const KoGPTPage(),
-    const ImageGPTPage(),
+    const KarloPage(),
     const SearchPage(),
   ];
 
